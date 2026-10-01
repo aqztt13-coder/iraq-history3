@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تراث العراق — مهد الحضارات</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6efe0;--card:#fffaf0;--ink:#2a2418;--mut:#6d614a;--blue:#17407a;--gold:#b8851f;--line:#e2d3b0;--hero1:#0f2a52;--hero2:#17407a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161f;--card:#1b2230;--ink:#f0e8d6;--mut:#aaa088;--blue:#7fb0f0;--gold:#e0b04a;--line:#2f3a50;--hero1:#0a1428;--hero2:#14305e}}
+:root[data-theme="dark"]{--bg:#12161f;--card:#1b2230;--ink:#f0e8d6;--mut:#aaa088;--blue:#7fb0f0;--gold:#e0b04a;--line:#2f3a50;--hero1:#0a1428;--hero2:#14305e}
+html{scroll-behavior:smooth;scroll-padding-top:calc(60px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,Tahoma,sans-serif;line-height:1.9}
+h1,h2,h3{font-family:Amiri,'Times New Roman',serif;margin:0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--hero1);display:flex;gap:4px;overflow-x:auto;padding:8px 12px;border-bottom:2px solid var(--gold)}
+nav a{color:#f0e8d6;text-decoration:none;padding:4px 14px;border-radius:20px;white-space:nowrap;font-size:15px}
+nav a:hover{background:var(--gold);color:#1a1405}
+.hero{background:radial-gradient(circle at 70% 20%,var(--hero2),var(--hero1));color:#f6efe0;text-align:center;padding:70px 20px 80px;position:relative;overflow:hidden}
+.hero svg{position:absolute;inset:auto 0 0 0;width:100%;height:90px;opacity:.35}
+.hero h1{font-size:clamp(40px,8vw,76px);color:#e8c36a;margin-bottom:6px}
+.hero p{max-width:640px;margin:10px auto;font-size:18px}
+.cune{font-size:30px;letter-spacing:10px;color:#e8c36a;opacity:.7;font-family:'Noto Sans Cuneiform','Segoe UI Historic',serif}
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:26px}
+.stats div{background:rgba(255,255,255,.08);border:1px solid #e8c36a55;border-radius:12px;padding:8px 18px}
+.stats b{display:block;font-size:24px;color:#e8c36a}
+section{max-width:1100px;margin:auto;padding:46px 18px}
+h2{font-size:34px;color:var(--blue);border-bottom:3px double var(--gold);display:inline-block;margin-bottom:8px}
+.sub{color:var(--mut);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.2s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 8px 20px #0002}
+.card:before{content:"";position:absolute;top:0;right:0;left:0;height:5px;background:linear-gradient(90deg,var(--blue),var(--gold))}
+.card h3{font-size:22px;color:var(--blue);margin:6px 0 2px}
+.tag{display:inline-block;background:var(--gold);color:#1a1405;font-size:12px;padding:0 10px;border-radius:10px}
+.date{color:var(--mut);font-size:13px}
+.card p{margin:6px 0 0;font-size:14.5px}
+.more{color:var(--gold);font-size:13px;font-weight:600}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.filters button{font:inherit;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:20px;padding:2px 16px;cursor:pointer}
+.filters button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.tl{position:relative;margin-right:18px;border-right:3px solid var(--gold);padding-right:26px}
+.tl .it{position:relative;margin-bottom:22px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.tl .it:before{content:"";position:absolute;right:-37px;top:20px;width:16px;height:16px;border-radius:50%;background:var(--blue);border:3px solid var(--gold)}
+.tl h3{font-size:22px;color:var(--blue)}
+.tabl{background:linear-gradient(135deg,#c9a56b,#a97f45);color:#2a1d08;border-radius:10px;padding:14px;text-align:center;font-family:'Noto Sans Cuneiform','Segoe UI Historic',serif;font-size:26px;letter-spacing:6px;margin-bottom:10px;box-shadow:inset 0 0 14px #5a3b0a88}
+.modal{position:fixed;inset:0;background:#000a;display:none;align-items:center;justify-content:center;z-index:20;padding:16px}
+.modal.on{display:flex}
+.box{background:var(--card);max-width:620px;width:100%;max-height:85%;overflow:auto;border-radius:16px;padding:22px;border-top:6px solid var(--gold)}
+.box h3{font-size:28px;color:var(--blue)}
+.box .x{float:left;background:none;border:0;font-size:28px;color:var(--ink);cursor:pointer}
+.box .interp{background:var(--bg);border-right:4px solid var(--gold);padding:8px 14px;border-radius:8px;margin-top:10px}
+.quiz{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.quiz button{display:block;width:100%;text-align:right;font:inherit;margin:6px 0;padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.quiz button.ok{background:#2e7d4a;color:#fff}.quiz button.no{background:#a33;color:#fff}
+footer{background:var(--hero1);color:#d8cdb2;text-align:center;padding:30px 16px;border-top:3px solid var(--gold)}
+.logo{display:flex;align-items:center;gap:8px;color:#e8c36a;font-family:Amiri,serif;font-size:20px;font-weight:700;padding:0 8px 0 14px;white-space:nowrap}
+.ic{width:56px;height:56px;border-radius:14px;background:var(--bg);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;float:left;margin-right:10px}
+.ic svg{width:38px;height:38px;fill:var(--gold);stroke:var(--gold)}
+.pg{position:fixed;inset:0;z-index:15;background:var(--bg);overflow:auto;display:none;padding-top:env(safe-area-inset-top,0px)}
+.pg.on{display:block}
+.pg .top{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#f6efe0;padding:30px 18px;text-align:center}
+.pg .top h1{color:#e8c36a;font-size:44px}
+.pg .top .ic{float:none;margin:0 auto 8px;width:80px;height:80px;background:#ffffff14;border-color:#e8c36a66}
+.pg .top .ic svg{width:56px;height:56px;fill:#e8c36a;stroke:#e8c36a}
+.pg .in{max-width:1000px;margin:auto;padding:24px 18px}
+.btn{font:inherit;background:var(--gold);color:#1a1405;border:0;border-radius:20px;padding:4px 18px;cursor:pointer;margin:4px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0}
+.facts div{background:var(--card);border:1px solid var(--line);border-right:4px solid var(--gold);border-radius:10px;padding:8px 14px}
+.facts b{display:block;color:var(--blue)}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.gal figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:zoom-in}
+.gal svg{display:block;width:100%;height:auto}
+.gal figcaption{padding:8px 12px;font-size:14px}
+</style>
+</head>
+<body>
+<nav>
+<a href="#home">الرئيسية</a><a href="#eras">العصور</a><a href="#sites">المواقع التراثية</a><a href="#kings">الملوك والحكام</a><a href="#tablets">الألواح والنقوش</a><a href="#cune">الكتابة المسمارية</a><a href="#quiz">اختبر معلوماتك</a>
+</nav>
+
+<header class="hero" id="home">
+<div class="cune">𒀭 𒆠 𒈗 𒌷</div>
+<h1>تراث العراق</h1>
+<p>أرض الرافدين، مهد الحضارات، حيث وُلدت الكتابة والمدينة والقانون وبدأ تدوين التاريخ.</p>
+<div class="stats">
+<div><b>+5000</b>سنة من الحضارة</div><div><b>6</b>مواقع في قائمة التراث العالمي</div><div><b>+500 ألف</b>لوح مسماري مكتشف</div>
+</div>
+<svg viewBox="0 0 1200 90" preserveAspectRatio="none"><path fill="#e8c36a" d="M0 90V60h60V40h40V60h80V30h40V60h100V50h60V20h50V50h110V60h90V35h40V60h120V45h50V60h80V25h40V60h110V50h70V60h100V40h50V90z"/></svg>
+</header>
+
+<section id="eras">
+<h2>العصور الحضارية</h2><p class="sub">رحلة عبر الزمن من السومريين إلى العراق الحديث</p>
+<div class="tl" id="tl"></div>
+</section>
+
+<section id="sites">
+<h2>المواقع التراثية</h2><p class="sub">اضغط على أي بطاقة لقراءة نبذة موسّعة</p>
+<div class="grid" id="sitesG"></div>
+</section>
+
+<section id="kings">
+<h2>الملوك والحكام</h2><p class="sub">من ملوك المدن السومرية إلى خلفاء بغداد</p>
+<div class="filters" id="kf"></div>
+<div class="grid" id="kingsG"></div>
+</section>
+
+<section id="tablets">
+<h2>الألواح والنقوش وتفسيرها</h2><p class="sub">نصوص خطّها أجدادنا على الطين والحجر، وهذا ما تقوله</p>
+<div class="grid" id="tabG"></div>
+</section>
+
+<section id="cune">
+<h2>الكتابة المسمارية</h2>
+<div class="card" style="cursor:default">
+<p>ظهرت الكتابة في مدينة أوروك نحو 3300 ق.م، بدأت صوراً تمثل الأشياء ثم تحولت إلى رموز مسمارية تُكتب بقلم من القصب يُضغط على الطين الرطب. استُخدمت لتدوين لغات عدة أبرزها السومرية والأكدية (البابلية والآشورية)، وبقيت حيّة نحو ثلاثة آلاف عام. فُكّت رموزها في القرن التاسع عشر بفضل نقش بيستون. سجّلت الألواح الحسابات والرسائل والقوانين والأدب والطب والفلك.</p>
+<div class="tabl" style="margin-top:12px">𒀭 = إله / سماء &nbsp; 𒈗 = ملك &nbsp; 𒆠 = أرض &nbsp; 𒌷 = مدينة</div>
+<p class="date">إن لم تظهر الرموز فمتصفحك يفتقر إلى خط يدعم المسمارية.</p>
+</div>
+</section>
+
+<section id="quiz">
+<h2>اختبر معلوماتك</h2>
+<div class="quiz" id="qz"></div>
+</section>
+
+<footer>
+<div class="cune">𒀭 𒈗 𒆠</div>
+<p>تراث العراق — إرث الإنسانية جمعاء. المعلومات تعريفية مبسطة وقد تختلف التواريخ بين المصادر.</p>
+</footer>
+
+<div class="modal" id="md"><div class="box" id="bx"></div></div>
+
+<script>
+const eras=[
+["السومريون","3500–2334 ق.م","بنوا أوروك وأور ولكش، واخترعوا الكتابة والعجلة والإدارة المدنية، وأقاموا أولى دول المدن."],
+["الأكديون","2334–2154 ق.م","أسس سرجون الأكدي أول إمبراطورية في التاريخ بعاصمته أكّد، وصارت الأكدية لغة المنطقة."],
+["سلالة أور الثالثة","2112–2004 ق.م","نهضة سومرية بقيادة أور-نمو، شُيّدت فيها الزقورات ووُضع أقدم قانون مكتوب معروف."],
+["البابليون القدماء","1894–1595 ق.م","بلغت بابل أوجها في عهد حمورابي، فاشتهرت بالقانون والرياضيات والفلك."],
+["الآشوريون","نحو 900–612 ق.م","إمبراطورية قوية عواصمها آشور ونمرود ونينوى، تميزت بنقوشها الجدارية ومكتبة آشوربانيبال."],
+["البابليون الجدد","626–539 ق.م","عصر نبوخذنصر الثاني: بوابة عشتار وأسوار بابل والجنائن المعلقة المنسوبة إليها."],
+["الفرثيون والساسانيون","نحو 140 ق.م–637 م","ازدهرت مدن مثل الحضر وطيسفون، وبرز طاق كسرى."],
+["العصر العباسي","762–1258 م","بُنيت بغداد عاصمة العالم، وازدهر بيت الحكمة وترجمة العلوم والفلسفة والطب."],
+["العراق الحديث","1921 م حتى اليوم","تأسست المملكة العراقية عام 1921، ثم الجمهورية عام 1958، وللعراق اليوم إرث ثقافي وأدبي غني."]];
+document.getElementById("tl").innerHTML=eras.map(e=>`<div class="it"><h3>${e[0]}</h3><span class="tag">${e[1]}</span><p>${e[2]}</p></div>`).join("");
+
+const sites=[
+["بابل","محافظة بابل","ضمن قائمة اليونسكو (2019)","عاصمة بابل القديمة، فيها بوابة عشتار المعاد بناء نسخة منها، وطريق الموكب وبقايا القصور. أقامت أسوارها ومعابدها أعظم حضارات الشرق القديم."],
+["أور","ذي قار","ضمن قائمة اليونسكو (2016)","مدينة سومرية عريقة تضم زقورة أور-نمو الشهيرة، والمقابر الملكية التي كشفت كنوزاً ذهبية. تُنسب إليها ولادة النبي إبراهيم عليه السلام في التقاليد الدينية."],
+["الأهوار","جنوب العراق","ضمن قائمة اليونسكو (2016)","أكبر منظومة أراضٍ رطبة في الشرق الأوسط، يسكنها المعدان منذ آلاف السنين ويبنون بيوت القصب (المضيف) ويعيشون على الجاموس والصيد."],
+["الحضر","نينوى","ضمن قائمة اليونسكو (1985)","مدينة عربية محصنة من العصر الفرثي، تتميز بمعابدها ذات الأعمدة وتماثيلها، وصمدت أمام حصار الرومان مرتين."],
+["آشور (قلعة شرقاط)","صلاح الدين","ضمن قائمة اليونسكو (2003)","عاصمة آشور الأولى ومركز عبادة الإله آشور، قامت على موقع استراتيجي مطل على نهر دجلة."],
+["سامراء","صلاح الدين","ضمن قائمة اليونسكو (2007)","عاصمة العباسيين في القرن التاسع الميلادي، وفيها المنارة الملوية ومسجد المتوكل أحد أكبر مساجد العالم القديمة."],
+["نينوى","نينوى","موقع أثري","عاصمة آشور الأخيرة، فيها قصر سنحاريب ومكتبة آشوربانيبال وسور المدينة وبواباتها."],
+["أوروك","المثنى","موقع أثري","مدينة جلجامش وأولى مدن العالم الكبرى، وفيها وُلدت الكتابة المسمارية، وفيها معبد إنانا وزقورة آنو."],
+["قلعة أربيل","أربيل","ضمن قائمة اليونسكو (2014)","تل مأهول منذ آلاف السنين، يُعد من أقدم المستوطنات المأهولة باستمرار في العالم."],
+["شارع المتنبي","بغداد","إرث ثقافي حي","قلب بغداد الثقافي منذ العصر العباسي، تُباع فيه الكتب كل جمعة وتلتقي فيه الأجيال."]];
+const sg=document.getElementById("sitesG");
+sg.innerHTML=sites.map((s,i)=>`<div class="card" onclick="openS(${i})"><span class="tag">${s[2]}</span><h3>${s[0]}</h3><div class="date">${s[1]}</div><p>${s[3].slice(0,85)}…</p><span class="more">اقرأ المزيد ‹</span></div>`).join("");
+function show(h){bx.innerHTML='<button class="x" onclick="md.classList.remove(\'on\')">×</button>'+h;md.classList.add("on")}
+function openS(i){const s=sites[i];show(`<h3>${s[0]}</h3><span class="tag">${s[2]}</span> <span class="date">${s[1]}</span><p>${s[3]}</p>`)}
+md.onclick=e=>{if(e.target==md)md.classList.remove("on")};
+
+const kings=[
+["جلجامش","سومري","نحو 2700 ق.م","الملك الخامس لأوروك بحسب القوائم السومرية، وبطل أشهر ملحمة في الأدب القديم، شيّد أسوار أوروك."],
+["سرجون الأكدي","أكدي","2334–2279 ق.م","مؤسس الإمبراطورية الأكدية وأول من وحّد بلاد الرافدين تحت حكم واحد، بنى عاصمته أكّد."],
+["أور-نمو","سومري","2112–2095 ق.م","مؤسس سلالة أور الثالثة وبانٍ لزقورة أور، ويُنسب إليه أقدم قانون مكتوب معروف."],
+["حمورابي","بابلي","1792–1750 ق.م","سادس ملوك بابل الأموريين، وحّد الجنوب ونشر شريعته على مسلة حجرية."],
+["تغلات بلاصر الثالث","آشوري","745–727 ق.م","أعاد تنظيم الجيش والإدارة وأسّس الإمبراطورية الآشورية الحديثة."],
+["سنحاريب","آشوري","705–681 ق.م","جعل نينوى عاصمة، وشيّد قصراً ضخماً وأنشأ شبكة قنوات لإمداد المدينة بالماء."],
+["آشوربانيبال","آشوري","668–631 ق.م","أنشأ مكتبة نينوى التي جمعت آلاف الألواح، ومنها وصلتنا نسخة ملحمة جلجامش."],
+["نبوخذنصر الثاني","بابلي","605–562 ق.م","أعظم ملوك بابل الجديدة، أعاد بناء المدينة وبوابة عشتار وزقورة إيتيمننكي."],
+["أبو جعفر المنصور","عباسي","754–775 م","مؤسس بغداد سنة 762م وأقام مدينتها المدورة."],
+["هارون الرشيد","عباسي","786–809 م","عصر ذهبي للعلم والأدب والتجارة في بغداد."],
+["المأمون","عباسي","813–833 م","رعى بيت الحكمة وحركة الترجمة وتطور الفلك والرياضيات."],
+["فيصل الأول","حديث","1921–1933 م","أول ملوك العراق الحديث، وأسّس الدولة العراقية ومؤسساتها."]];
+const kf=document.getElementById("kf"),kg=document.getElementById("kingsG");
+const groups=["الكل",...new Set(kings.map(k=>k[1]))];
+function rk(g){kf.innerHTML=groups.map(x=>`<button class="${x==g?'on':''}" onclick="rk('${x}')">${x}</button>`).join("");
+kg.innerHTML=kings.filter(k=>g=="الكل"||k[1]==g).map(k=>`<div class="card" style="cursor:default"><span class="tag">${k[1]}</span><h3>${k[0]}</h3><div class="date">${k[2]}</div><p>${k[3]}</p></div>`).join("")}
+rk("الكل");
+
+const tabs=[
+["ملحمة جلجامش","𒄑𒂆𒄀𒈩","أقدم عمل أدبي ملحمي معروف، كُتبت أجزاؤها بالسومرية ثم الأكدية. الصيغة الأشهر نُسخت على 12 لوحاً في مكتبة نينوى.","تحكي الملحمة قصة ملك أوروك الذي يفقد صديقه أنكيدو فيبحث عن الخلود، وفي اللوح الحادي عشر يروي أوتنابشتم قصة الطوفان. الخلاصة أن الخلود الحقيقي هو في الأعمال والمدينة التي نبنيها."],
+["شريعة حمورابي","𒄩𒄠𒁺𒉡","مسلة من حجر البازلت عليها نحو 282 مادة قانونية، عُثر عليها في سوسة بإيران بعد أن نُقلت من بلاد الرافدين، وهي اليوم في متحف اللوفر.","تتناول التجارة والزراعة والأسرة والعقوبات، وتقوم على مبدأ تناسب الجزاء، وتبدأ بمقدمة تؤكد أن الملك أُوكلت إليه حماية الضعيف من الظالم."],
+["لوح الطوفان (أتراحاسيس)","𒀜𒋾𒊏𒄩","نص بابلي قديم يحكي قصة الطوفان من قبل ملحمة جلجامش بنحو ألف عام.","تقرر الآلهة إفناء البشر لضجيجهم، فينبّه الإله إنكي أتراحاسيس إلى بناء سفينة. القصة تعكس فهم القدماء للعلاقة بين الإنسان والطبيعة والآلهة."],
+["أقدم ألواح أوروك","𒌷𒀀𒆠","ألواح طينية تعود إلى 3300 ق.م تقريباً، وعُدّت أولى نماذج الكتابة في العالم.","معظمها سجلات إدارية: حبوب وأغنام وبيرة وعمال المعابد. أي أن الكتابة وُلدت لحفظ الحسابات قبل أن تصبح أدباً."],
+["الخريطة البابلية للعالم","𒆳𒈾𒇉𒀭","لوح من القرن السادس ق.م يُرجَّح أنه من سيبار، وهو موجود اليوم في المتحف البريطاني.","يرسم بابل في وسط دائرة تحيط بها مياه البحر المرّ، وتمتد منها جزر ومناطق ذات هيئة مثلثات، مع شروح عن كائنات أسطورية. هو أقدم رسم معروف يصوّر نظرة الإنسان للعالم."],
+["معيار أور","𒌨𒋀𒀕","صندوق صغير من الصدف واللازورد وُجد في المقابر الملكية بأور، يعود إلى 2600 ق.م.","وجهه الأول يصور الحرب بعرباتها وأسراها، والثاني يصور الاحتفال بالنصر والمأدبة الملكية، وهو شهادة مصورة على الحياة في السلالات القديمة."],
+["أسطوانة كورش","𒆍𒊏𒀊𒋼","أسطوانة طينية بابلية عُثر عليها في بابل عام 1879، ويحفظها المتحف البريطاني.","تروي دخول كورش بابل سنة 539 ق.م ومعاملته للسكان وإعادة معابدهم، وهي وثيقة مهمة عن التسامح السياسي في العصور القديمة."],
+["لوح بلمبتون 322","𒐕𒐖𒐗","لوح بابلي من الفترة 1800 ق.م تقريباً، يُعتقد أنه من لارسا جنوب العراق.","يضم جدولاً من أعداد تحقق علاقة فيثاغورس بين أضلاع المثلث القائم قبل ولادة فيثاغورس بأكثر من ألف عام."]];
+tabG.innerHTML=tabs.map((t,i)=>`<div class="card" onclick="openT(${i})"><div class="tabl" style="font-size:20px;padding:8px">${t[1]}</div><h3>${t[0]}</h3><p>${t[2].slice(0,80)}…</p><span class="more">التفسير ‹</span></div>`).join("");
+function openT(i){const t=tabs[i];show(`<div class="tabl">${t[1]}</div><h3>${t[0]}</h3><p>${t[2]}</p><div class="interp"><b>التفسير:</b> ${t[3]}</div>`)}
+
+const qs=[["من أسس بغداد؟",["هارون الرشيد","أبو جعفر المنصور","المأمون"],1],["أين وُلدت الكتابة المسمارية؟",["أوروك","نينوى","سامراء"],0],["أي ملك أنشأ بوابة عشتار؟",["حمورابي","سرجون","نبوخذنصر الثاني"],2],["أي موقع يضم منارة الملوية؟",["سامراء","الحضر","أور"],0]];
+let qi=0,sc=0;
+function rq(){const q=qs[qi];if(!q){qz.innerHTML=`<h3>نتيجتك ${sc} من ${qs.length}</h3><button onclick="qi=0;sc=0;rq()">أعد المحاولة</button>`;return}
+qz.innerHTML=`<h3>${q[0]}</h3>`+q[1].map((o,i)=>`<button onclick="ans(this,${i})">${o}</button>`).join("")}
+function ans(b,i){const q=qs[qi];if(i==q[2])sc++;b.classList.add(i==q[2]?"ok":"no");[...qz.querySelectorAll("button")].forEach((x,j)=>{x.disabled=1;if(j==q[2])x.classList.add("ok")});setTimeout(()=>{qi++;rq()},1100)}
+rq();
+</script>
+<script>
+const I={
+zig:'<rect x="6" y="46" width="52" height="10"/><rect x="14" y="36" width="36" height="10"/><rect x="22" y="26" width="20" height="10"/><rect x="28" y="16" width="8" height="10"/>',
+gate:'<rect x="6" y="20" width="14" height="36"/><rect x="44" y="20" width="14" height="36"/><rect x="18" y="14" width="28" height="12"/><path d="M22 56V38a10 10 0 0 1 20 0v18z" fill="var(--bg)" stroke="none"/>',
+reed:'<g fill="none" stroke-width="3"><path d="M10 54q-2-24 6-40M22 54q0-26-4-38M34 54q2-24 12-36M46 54q-2-20 8-30"/><path d="M4 58q8-4 14 0t14 0 14 0 14 0"/></g>',
+col:'<rect x="8" y="12" width="48" height="6"/><rect x="12" y="18" width="6" height="34"/><rect x="29" y="18" width="6" height="34"/><rect x="46" y="18" width="6" height="34"/><rect x="6" y="52" width="52" height="6"/>',
+min:'<path d="M32 4l-4 8h8z"/><rect x="29" y="12" width="6" height="8"/><path d="M26 20h12l3 10H23z"/><path d="M22 30h20l4 12H18z"/><path d="M16 42h32l5 16H11z"/>',
+tow:'<rect x="14" y="26" width="36" height="30"/><path d="M14 26v-8h6v4h6v-4h6v4h6v-4h6v4h6v-4h6v8z"/><path d="M26 56V42a6 6 0 0 1 12 0v14z" fill="var(--bg)" stroke="none"/>',
+wall:'<rect x="4" y="30" width="56" height="26"/><path d="M4 30v-8h8v4h8v-4h8v4h8v-4h8v4h8v-4h8v8z"/><path d="M24 56V42a8 8 0 0 1 16 0v14z" fill="var(--bg)" stroke="none"/>',
+cit:'<path d="M4 58L14 36h36l10 22z"/><rect x="18" y="22" width="28" height="14"/><path d="M18 22v-6h5v3h6v-3h6v3h6v-3h5v6z"/>',
+bk:'<rect x="10" y="42" width="44" height="10" rx="2"/><rect x="14" y="30" width="38" height="10" rx="2"/><rect x="8" y="18" width="40" height="10" rx="2"/>'};
+const svg=k=>`<svg viewBox="0 0 64 64">${I[k]}</svg>`;
+// logo
+const lg='<svg viewBox="0 0 64 64" width="34" height="34"><circle cx="32" cy="32" r="30" fill="#17407a" stroke="#e8c36a" stroke-width="3"/><g fill="#e8c36a"><path d="M32 8l3 9h-6z"/><rect x="22" y="38" width="20" height="6"/><rect x="26" y="32" width="12" height="6"/><rect x="29" y="26" width="6" height="6"/><rect x="18" y="44" width="28" height="6"/></g><path d="M12 24a20 20 0 0 0 40 0" fill="none" stroke="#e8c36a" stroke-width="2"/></svg>';
+document.querySelector("nav").insertAdjacentHTML("afterbegin",`<span class="logo">${lg}تراث العراق</span>`);
+document.querySelector(".hero").insertAdjacentHTML("afterbegin",`<div style="width:90px;margin:0 auto 10px">${lg.replace('width="34" height="34"','width="90" height="90"')}</div>`);
+// detailed eras
+const E=[
+["السومريون","3500–2334 ق.م","نشأت في جنوب العراق أولى دول المدن: أوروك وأور ولكش وأوما، وكان لكل مدينة إله حامٍ وملك أو حاكم (إنسي). ابتكر السومريون الكتابة المسمارية والعجلة ونظام الستين الذي ما زلنا نقيس به الوقت والزوايا، وبنوا الزقورات والقنوات للري. وتركت أدبياً كبيراً من أساطير وترانيم وأمثال."],
+["الأكديون","2334–2154 ق.م","وحّد سرجون الأكدي المدن من الخليج إلى المتوسط وجعل أكّد عاصمة، فأقام أول إمبراطورية معروفة. انتشرت اللغة الأكدية وصارت لغة الدبلوماسية، وعُرف حفيده نرام-سين بلقب «ملك الجهات الأربع»، ثم انهارت الدولة بفعل الجفاف وهجمات الغوتيين."],
+["سلالة أور الثالثة","2112–2004 ق.م","أعاد أور-نمو توحيد سومر وشيّد زقورة أور الكبرى، وجاء بعده ابنه شولغي الذي نظم الإدارة والضرائب والبريد. كتب الكتّاب مئات آلاف الألواح الإدارية، وهي مصدر دقيق عن الاقتصاد القديم. أنهى الغزو العيلامي هذه الحقبة."],
+["البابليون القدماء","1894–1595 ق.م","أسس الأموريون سلالة بابل، وبلغت ذروتها مع حمورابي الذي وحّد جنوب العراق ووسطه ونشر شريعته. ازدهرت الرياضيات (جداول، معادلات تربيعية) والفلك والطب، وصارت بابل مركزاً دينياً وثقافياً حتى سقوطها بيد الحثيين."],
+["الآشوريون","نحو 900–612 ق.م","بدأت آشور مدينة صغيرة على دجلة ثم تحولت إلى إمبراطورية بجيش منظم وطرق وبريد. نُقلت العاصمة من آشور إلى نمرود ثم دور شروكين ثم نينوى، وزُينت القصور بنقوش بارزة تصور الصيد والمعارك. جمع آشوربانيبال المعرفة في مكتبته، وسقطت الدولة سنة 612 ق.م."],
+["البابليون الجدد","626–539 ق.م","نهضت بابل من جديد بقيادة نبوبلاصر، ثم بلغت مجدها مع نبوخذنصر الثاني الذي أعاد بناء المدينة بأسوارها وبوابة عشتار المزينة بالآجر المزجج الأزرق وزقورة إيتيمننكي. ارتبطت بها الجنائن المعلقة، وانتهى عهدها بدخول كورش الفارسي سنة 539 ق.م."],
+["الفرثيون والساسانيون","نحو 140 ق.م–637 م","خضع العراق للفرثيين ثم الساسانيين، وكانت طيسفون (المدائن) عاصمة تضم إيوان كسرى بقوسه الضخم. وظهرت دويلات عربية كالحضر والحيرة، وازدهرت التجارة عبر طريق الحرير وتعايشت الأديان في المدن."],
+["العصر العباسي","762–1258 م","أسس المنصور بغداد المدورة سنة 762م فصارت أكبر مدن العالم. في عهد الرشيد والمأمون ازدهر بيت الحكمة وترجمة علوم اليونان والهند وفارس، وبرز الخوارزمي وابن الهيثم والكندي. وانتهى العصر بسقوط بغداد سنة 1258م على يد المغول."],
+["العراق الحديث","1921 م حتى اليوم","بعد العهد العثماني والانتداب البريطاني تأسست المملكة العراقية عام 1921، ثم الجمهورية عام 1958. أُنشئ المتحف العراقي عام 1926 ليحفظ ملايين القطع. ويواصل العراقيون اليوم حماية آثارهم وترميمها، ويحتفون بأدبه وشعره وفنونه وموسيقاه."]];
+document.getElementById("tl").innerHTML=E.map(e=>`<div class="it"><h3>${e[0]}</h3><span class="tag">${e[1]}</span><p>${e[2]}</p></div>`).join("");
+// sites
+const K=["gate","zig","reed","col","tow","min","wall","zig","cit","bk"];
+const X=[
+["نحو 2300 ق.م – 539 ق.م","أشهر عواصم الشرق القديم","تقع قرب مدينة الحلة، وتضم بقايا قصر نبوخذنصر وطريق الموكب ونسخة من بوابة عشتار (الأصل في متحف برلين). كانت مركز عبادة الإله مردوخ ومحور الحياة الدينية."],
+["نحو 2100 ق.م","زقورة سليمة بارتفاع ثلاث طبقات","شيّد أور-نمو الزقورة لإله القمر نانا، وكشفت مقابر أور الملكية عن خوذة ذهبية وقيثارات مزخرفة وأدوات تعود إلى الألفية الثالثة ق.م."],
+["منذ أكثر من 5000 سنة","موطن المعدان وموسم هجرة الطيور","هور الحويزة والحمّار والجبايش من أبرز مسطحاتها. يبني السكان المضيف من القصب، ويستخدمون المشحوف قارباً، وتُعد الأهوار ملاذاً لطيور مهاجرة وأسماك نادرة."],
+["القرنان الأول ق.م والثاني م","مدينة محصنة بأسوار مزدوجة","اشتهرت معابدها وإيواناتها المزينة بنقوش وتماثيل ذات طراز هلنستي وشرقي، وكانت مركزاً تجارياً وعسكرياً على طرق القوافل."],
+["الألفية الثالثة – السابع ق.م","أول عاصمة للآشوريين","بُنيت على صخرة مرتفعة فوق دجلة، وفيها معبد الإله آشور وقصور ومقابر ملوك. تضررت بسبب إنشاء سد حديثة في المنطقة، فأُدرجت على قائمة المواقع المهددة."],
+["836–892 م","أضخم مدينة أثرية إسلامية","عاصمة المعتصم ومن بعده، فيها الجامع الكبير بمئذنته الملوية الحلزونية بارتفاع نحو 52 متراً، وقصور واسعة وشبكة شوارع منتظمة."],
+["القرن السابع ق.م","عاصمة سنحاريب وآشوربانيبال","تقع في الموصل الحالية، وفيها بوابات ضخمة مثل بوابة نركال وبوابة شمش، وقصر سنحاريب ومكتبة آشوربانيبال التي ضمت آلاف الألواح."],
+["نحو 4000 – 300 ق.م","مدينة جلجامش وأقدم الكتابة","كانت أوروك أكبر مدن العالم بسكان يُقدَّرون بعشرات الآلاف، وفيها معبد إنانا والزقورة وسور يُنسب إلى جلجامش. ظهرت فيها أولى العلامات المسمارية."],
+["منذ نحو 6000 سنة","من أقدم المدن المأهولة بلا انقطاع","يرتفع التل نحو 30 متراً فوق المدينة، وتسكنه بيوت تقليدية. أُعيد ترميم جدرانه وبواباته ضمن مشروع يحفظ الطابع المعماري."],
+["العصر العباسي حتى اليوم","أكبر تجمع للكتب والمكتبات في بغداد","سُمي على اسم الشاعر أبي الطيب المتنبي، ويُقام فيه سوق الجمعة للكتب، وفيه مقاهٍ ثقافية مثل الشابندر، وكان رمزاً لصمود المدينة بعد تفجير 2007 وإعادة افتتاحه."]];
+const cp=["منظر عند الفجر","في وضح النهار","وقت الغروب","في ضوء القمر"];
+const pal=[["#f5c27a","#7fb0d8"],["#7fc4f0","#f6e7b8"],["#e8794a","#3a2a5a"],["#0f1a38","#2c3e6a"]];
+let gid=0;
+function scene(k,j){const[a,b]=pal[j],g="g"+(gid++);return `<svg viewBox="0 0 300 180"><defs><linearGradient id="${g}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><rect width="300" height="180" fill="url(#${g})"/><circle cx="${60+j*60}" cy="${40+(j%2)*15}" r="${j==3?14:20}" fill="${j==3?'#f4f1dc':'#fff3b0'}" opacity=".9"/>${j==3?'<g fill="#fff"><circle cx="30" cy="25" r="1.5"/><circle cx="240" cy="40" r="1.5"/><circle cx="200" cy="18" r="1.5"/></g>':''}<path d="M0 140q60-25 120-5t180-15v60H0z" fill="${j==3?'#1a2238':'#c9a56b'}"/><g transform="translate(${95+j*8} 40) scale(1.8)" fill="${j==3?'#cfd6e8':'#6d4f1f'}" stroke="${j==3?'#cfd6e8':'#6d4f1f'}">${I[k]}</g></svg>`}
+const sg2=document.getElementById("sitesG");
+sg2.innerHTML=sites.map((s,i)=>`<div class="card" onclick="openP(${i})"><div class="ic">${svg(K[i])}</div><span class="tag">${s[2]}</span><h3>${s[0]}</h3><div class="date">${s[1]}</div><p>${X[i][2].slice(0,80)}…</p><span class="more">افتح معرض الصور ‹</span></div>`).join("");
+const pg=document.createElement("div");pg.className="pg";document.body.appendChild(pg);
+function openP(i){const s=sites[i],x=X[i],n=sites.length;
+pg.innerHTML=`<div class="top"><div class="ic">${svg(K[i])}</div><h1>${s[0]}</h1><span class="tag">${s[2]}</span><div><button class="btn" onclick="pg.classList.remove('on');document.body.style.overflow=''">← العودة للموقع</button></div></div><div class="in"><h2 style="font-size:26px">نبذة</h2><p>${s[3]}</p><p>${x[2]}</p><div class="facts"><div><b>الموقع</b>${s[1]}</div><div><b>الحقبة</b>${x[0]}</div><div><b>الأهمية</b>${x[1]}</div></div><h2 style="font-size:26px">معرض الصور</h2><p class="date">رسوم توضيحية للموقع في أوقات مختلفة، اضغط على أي منها لتكبيرها.</p><div class="gal">${cp.map((c,j)=>`<figure onclick="show(\`${scene(K[i],j).replace(/id="g\d+"/,m=>m).replace(/`/g,'')}<h3>${s[0]} — ${c}</h3>\`)">${scene(K[i],j)}<figcaption>${s[0]} — ${c}</figcaption></figure>`).join("")}</div><div style="text-align:center;margin-top:20px"><button class="btn" onclick="openP(${(i+n-1)%n})">› الموقع السابق</button><button class="btn" onclick="openP(${(i+1)%n})">الموقع التالي ‹</button></div></div>`;
+pg.classList.add("on");pg.scrollTop=0;document.body.style.overflow="hidden"}
+</script>
+</body>
+</html>
